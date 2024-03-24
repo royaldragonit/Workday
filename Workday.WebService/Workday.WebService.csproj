@@ -1,0 +1,641 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4783FD29-77D1-4023-BE89-1C54D232CA02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Workday.WebService</RootNamespace>
+    <AssemblyName>Workday.WebService</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\WorkdayReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="IService1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Connected Services\WorkdayReference\Recruiting.wsdl" />
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Assess_CandidateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Assess_Candidate_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Assign_Recruiting_SelfSchedule_CalendarOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Assign_Recruiting_SelfSchedule_Calendar_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Close_Evergreen_RequisitionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Close_Evergreen_Requisition_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Close_Job_RequisitionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Close_Job_Requisition_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Create_Evergreen_RequisitionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Create_Evergreen_Requisition_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Create_Job_RequisitionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Create_Job_Requisition_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Create_PositionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Create_Position_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Evergreen_RequisitionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Evergreen_Requisition_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Job_RequisitionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Job_Requisition_Additional_DataOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Job_Requisition_Additional_Data_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Job_Requisition_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Position_RestrictionsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Position_Restrictions_Additional_DataOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Position_Restrictions_Additional_Data_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Edit_Positon_Restriction_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Employment_AgreementOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Employment_Agreement_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_ApplicantsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Applicants_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Assess_CandidateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Assess_Candidate_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Assign_Recruiting_SelfSchedule_CalendarsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Assign_Recruiting_SelfSchedule_Calendars_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Background_CheckOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Background_Check_PackagesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Background_Check_Packages_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Background_Check_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_CandidatesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Candidates_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Candidate_AttachmentsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Candidate_Attachments_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Candidate_PhotosOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Candidate_Photos_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Evergreen_RequisitionsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Evergreen_Requisitions_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_External_ReferenceOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_External_Reference_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_InterviewsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Interviews_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Interview_FeedbacksOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Interview_Feedbacks_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Application_Additional_DataOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Application_Additional_Data_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Application_Template_TranslationOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Application_Template_Translation_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_PostingsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Postings_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Posting_SitesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Posting_Sites_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_RequisitionsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Requisitions_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Requisition_Interview_SettingsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Job_Requisition_Interview_Settings_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Maintain_Candidate_List_AssignmentOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Maintain_Candidate_List_Assignment_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Masked_Job_Requisition_DefaultsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Masked_Job_Requisition_Defaults_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Masked_Recruiting_ConfigurationsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Masked_Recruiting_Configurations_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_OrganizationsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Organizations_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_PositionsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Positions_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_QuestionnairesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Questionnaires_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_AgenciesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_Agencies_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_Agency_Additional_DataOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_Agency_Additional_Data_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_Agency_UsersOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_Agency_Users_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_Assessment_CategoriesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_Assessment_Categories_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_Assessment_Category_Security_SegmentsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_Assessment_Category_Security_Segments_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_SelfSchedule_CalendarsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_SelfSchedule_Calendars_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_SelfSchedule_Calendar_TypesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Recruiting_SelfSchedule_Calendar_Types_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_RefereesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Referees_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Server_TimestampOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Site_BrandsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Site_Brands_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Veteran_StatusesOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Veteran_Statuses_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Web_Conference_Interview_DataOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Get_Web_Conference_Interview_Data_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Import_ApplicantOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Manage_Job_Requisition_FreezeOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Manage_Job_Requisition_Freeze_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Move_CandidateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Move_Candidate_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Move_Candidate_to_Linked_Evergreen_RequisitionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Move_Candidate_to_Linked_Evergreen_Requisition_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Move_Candidate_to_Linked_Job_RequisitionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Move_Candidate_to_Linked_Job_Requisition_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Move_Job_RequisitionOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Move_Job_Requisition_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.OfferOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Offer_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Post_JobOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Post_Job_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_ApplicantOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Applicant_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Background_CheckOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Background_Check_PackageOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Background_Check_Package_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Background_Check_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_CandidateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Candidate_AttachmentOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Candidate_Attachment_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Candidate_PhotoOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Candidate_Photos_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Candidate_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_External_ReferenceOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_External_Reference_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Import_Process_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_InterviewOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Interview_FeedbackOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Interview_Feedback_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Interview_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Job_Application_Additional_DataOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Job_Application_Additional_Data_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Job_Application_Template_TranslationOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Job_Application_Template_Translation_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Job_Posting_SiteOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Job_Posting_Site_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Job_Requisition_Interview_SettingsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Job_Requisition_Interview_Settings_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Maintain_Candidate_List_AssignmentOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Maintain_Candidate_List_Assignment_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Masked_Job_Requisition_DefaultOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Masked_Job_Requisition_Default_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Masked_Recruiting_ConfigurationOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Masked_Recruiting_Configuration_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Primary_PostingOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Primary_Posting_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_AgencyOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_Agency_Additional_DataOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_Agency_Additional_Data_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_Agency_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_Agency_UserOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_Agency_User_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_Assessment_CategoryOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_Assessment_Category_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_Assessment_Category_Security_SegmentOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_Assessment_Category_Security_Segment_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_SelfSchedule_CalendarOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_SelfSchedule_Calendar_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_SelfSchedule_Calendar_TypeOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Recruiting_SelfSchedule_Calendar_Type_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_RefereeOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Referee_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Site_BrandOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Site_Brand_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Undo_Move_from_HireOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Undo_Move_from_Hire_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Veteran_StatusOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Veteran_Status_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Web_Conference_Interview_DataOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Put_Web_Conference_Interview_Data_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Refer_a_CandidateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Refer_a_Candidate_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Server_TimestampType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Submit_Recruiting_Agency_CandidateOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Submit_Recruiting_Agency_Candidate__ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Unpost_JobOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Unpost_Job_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Update_Job_PostingOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WorkdayReference\Workday.WebService.WorkdayReference.Update_Job_Posting_ResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WorkdayReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WorkdayReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WorkdayReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WorkdayReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio</VSToolsPath>
+    <WcfServiceModelTargetPath>$(VSToolsPath)\WCF</WcfServiceModelTargetPath>
+  </PropertyGroup>
+  <Import Project="$(WcfServiceModelTargetPath)\Microsoft.VisualStudio.ServiceModel.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

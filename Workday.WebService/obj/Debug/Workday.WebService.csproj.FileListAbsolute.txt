@@ -1,0 +1,7 @@
+E:\Project\WorkdayWebService\Workday.WebService\bin\Debug\Workday.WebService.dll.config
+E:\Project\WorkdayWebService\Workday.WebService\bin\Debug\Workday.WebService.dll
+E:\Project\WorkdayWebService\Workday.WebService\bin\Debug\Workday.WebService.pdb
+E:\Project\WorkdayWebService\Workday.WebService\obj\Debug\Workday.WebService.csproj.AssemblyReference.cache
+E:\Project\WorkdayWebService\Workday.WebService\obj\Debug\Workday.WebService.csproj.CoreCompileInputs.cache
+E:\Project\WorkdayWebService\Workday.WebService\obj\Debug\Workday.WebService.dll
+E:\Project\WorkdayWebService\Workday.WebService\obj\Debug\Workday.WebService.pdb
